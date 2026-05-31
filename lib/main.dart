@@ -1,0 +1,24 @@
+import 'package:flutter/material.dart';
+import 'package:teaching_lms_adv/core/routes/router.dart';
+import 'package:teaching_lms_adv/core/theme/theme_mode.dart';
+import 'package:teaching_lms_adv/features/home/pages/home_page.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      title: 'LMS Teaching ADV',
+      debugShowCheckedModeBanner: false,
+      theme: AppThemeMode.lightTheme(context),
+      darkTheme: AppThemeMode.darkTheme(context),
+      themeMode: ThemeMode.system,
+      routerConfig: AppRoute.router(),
+    );
+  }
+}
