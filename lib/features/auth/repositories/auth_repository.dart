@@ -15,10 +15,10 @@ class AuthRepositoryImpl implements AuthRepository {
     required String password,
   }) async {
     return await apiService.post(
-      "/login/",
-      data: {},
+      "auth/login/",
+      data: {"email": email, "password": password},
       fromJson: (json) {
-        return json['msg'];
+        return "Login successful";
       },
     );
   }

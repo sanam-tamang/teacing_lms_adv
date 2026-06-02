@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:teaching_lms_adv/core/di/di_init.dart';
 import 'package:teaching_lms_adv/core/routes/router.dart';
 import 'package:teaching_lms_adv/core/theme/theme_mode.dart';
-import 'package:teaching_lms_adv/features/home/pages/home_page.dart';
+import 'package:teaching_lms_adv/features/auth/blocs/login/login_bloc.dart';
 
 void main() {
+  init();
   runApp(const MyApp());
 }
 
@@ -12,13 +15,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'LMS Teaching ADV',
-      debugShowCheckedModeBanner: false,
-      theme: AppThemeMode.lightTheme(context),
-      darkTheme: AppThemeMode.darkTheme(context),
-      themeMode: ThemeMode.system,
-      routerConfig: AppRoute.router(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => sl<LoginBloc>()),
+        // BlocProvider(create: (context) => SubjectBloc()),
+      ],
+      child: MaterialApp.router(
+        title: 'LMS Teaching ADV',
+        debugShowCheckedModeBanner: false,
+        theme: AppThemeMode.lightTheme(context),
+        darkTheme: AppThemeMode.darkTheme(context),
+        themeMode: ThemeMode.system,
+        routerConfig: AppRoute.router(),
+      ),
     );
   }
 }
