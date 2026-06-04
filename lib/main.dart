@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:teaching_lms_adv/core/di/di_init.dart';
+import 'package:teaching_lms_adv/core/blocs/gate_keeper/gate_keeper_cubit.dart';
+import 'package:teaching_lms_adv/core/di/depedency_injection%5D.dart';
 import 'package:teaching_lms_adv/core/routes/router.dart';
 import 'package:teaching_lms_adv/core/theme/theme_mode.dart';
 import 'package:teaching_lms_adv/features/auth/blocs/login/login_bloc.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => sl<LoginBloc>()),
-        // BlocProvider(create: (context) => SubjectBloc()),
+        BlocProvider(create: (context) => sl<GateKeeperCubit>()),
       ],
       child: MaterialApp.router(
         title: 'LMS Teaching ADV',

@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
+import 'package:teaching_lms_adv/core/blocs/gate_keeper/gate_keeper_cubit.dart';
 import 'package:teaching_lms_adv/core/network/api_url.dart';
 import 'package:teaching_lms_adv/core/network/dio_client.dart';
 import 'package:teaching_lms_adv/core/services/api_service.dart';
@@ -14,6 +15,7 @@ void init() {
   //bloc
 
   sl.registerLazySingleton(() => LoginBloc(authRepository: sl()));
+  sl.registerLazySingleton(() => GateKeeperCubit(sl()));
 
   //repo
   sl.registerLazySingleton<AuthRepository>(
@@ -23,7 +25,7 @@ void init() {
   //core
 
   sl.registerLazySingleton(() => TokenStorageService(sl()));
-  
+
   sl.registerLazySingleton(() => ApiService(sl()));
 
   sl.registerLazySingleton(() => DioClient(sl()));
