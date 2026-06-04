@@ -3,6 +3,7 @@ import 'package:teaching_lms_adv/core/pages/splash_page.dart';
 import 'package:teaching_lms_adv/core/routes/route_name.dart';
 import 'package:teaching_lms_adv/features/auth/pages/login_page.dart';
 import 'package:teaching_lms_adv/features/home/pages/home_page.dart';
+import 'package:teaching_lms_adv/features/profile/pages/profile_page.dart';
 
 class AppRoute {
   static GoRouter router() {
@@ -13,6 +14,7 @@ class AppRoute {
         GoRoute(
           path: RouteName.splash.path,
           name: RouteName.splash,
+
           builder: (context, state) {
             return SplashPage();
           },
@@ -33,6 +35,15 @@ class AppRoute {
 
           builder: (context, state) {
             return LoginPage();
+          },
+        ),
+
+        GoRoute(
+          path: RouteName.profile.path,
+          name: RouteName.profile,
+
+          builder: (context, state) {
+            return ProfilePage();
           },
         ),
       ],

@@ -14,7 +14,7 @@ class GateKeeperCubit extends Cubit<GateKeeperState> {
 
   Future<void> getStatus() async {
     try {
-      await Future.delayed(Duration(seconds: 3));
+      await Future.delayed(Duration(seconds: 1));
       final token = await _tokenStorageService.getAccessToken();
       if (token != null) {
         emit(GateKeeperState.authenticated());

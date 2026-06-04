@@ -8,6 +8,8 @@ import 'package:teaching_lms_adv/core/services/api_service.dart';
 import 'package:teaching_lms_adv/core/storage/token_storage.dart';
 import 'package:teaching_lms_adv/features/auth/blocs/login/login_bloc.dart';
 import 'package:teaching_lms_adv/features/auth/repositories/auth_repository.dart';
+import 'package:teaching_lms_adv/features/profile/blocs/profile/profile_bloc.dart';
+import 'package:teaching_lms_adv/features/profile/repositories/profile_repository.dart';
 
 final sl = GetIt.instance;
 
@@ -16,10 +18,15 @@ void init() {
 
   sl.registerLazySingleton(() => LoginBloc(authRepository: sl()));
   sl.registerLazySingleton(() => GateKeeperCubit(sl()));
+  sl.registerLazySingleton(() => ProfileBloc(sl()));
 
   //repo
   sl.registerLazySingleton<AuthRepository>(
     () => AuthRepositoryImpl(apiService: sl(), tokenStorageService: sl()),
+  );
+
+  sl.registerLazySingleton<ProfileRepository>(
+    () => ProfileRepositoryImpl(apiService: sl()),
   );
 
   //core
@@ -28,9 +35,12 @@ void init() {
 
   sl.registerLazySingleton(() => ApiService(sl()));
 
-  sl.registerLazySingleton(() => DioClient(sl()));
+  sl.registerLazySingleton(() => DioClient(sl(), sl()));
 
   sl.registerLazySingleton(() => Dio(BaseOptions(baseUrl: kBaseUrl)));
+  sl.registerLazySingleton(
+    () => AuthTokenInterceptor(tokenStorageService: sl()),
+  );
 
   sl.registerLazySingleton(() => FlutterSecureStorage());
 }
