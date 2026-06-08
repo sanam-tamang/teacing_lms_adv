@@ -6,47 +6,45 @@ import 'package:teaching_lms_adv/features/home/pages/home_page.dart';
 import 'package:teaching_lms_adv/features/profile/pages/profile_page.dart';
 
 class AppRoute {
-  static GoRouter router() {
-    return GoRouter(
-      initialLocation: RouteName.splash.path,
+  static final GoRouter router = GoRouter(
+    initialLocation: RouteName.splash.path,
 
-      routes: [
-        GoRoute(
-          path: RouteName.splash.path,
-          name: RouteName.splash,
+    routes: [
+      GoRoute(
+        path: RouteName.splash.path,
+        name: RouteName.splash,
 
-          builder: (context, state) {
-            return SplashPage();
-          },
-        ),
+        builder: (context, state) {
+          return SplashPage();
+        },
+      ),
 
-        GoRoute(
-          path: RouteName.home.path,
-          name: RouteName.home,
+      GoRoute(
+        path: RouteName.home.path,
+        name: RouteName.home,
 
-          builder: (context, state) {
-            return HomePage();
-          },
-        ),
+        builder: (context, state) {
+          return HomePage();
+        },
+      ),
 
-        GoRoute(
-          path: RouteName.login.path,
-          name: RouteName.login,
+      GoRoute(
+        path: RouteName.login.path,
+        name: RouteName.login,
 
-          builder: (context, state) {
-            return LoginPage();
-          },
-        ),
+        builder: (context, state) {
+          return LoginPage();
+        },
+      ),
 
-        GoRoute(
-          path: RouteName.profile.path,
-          name: RouteName.profile,
+      GoRoute(
+        path: RouteName.profile.path,
+        name: RouteName.profile,
 
-          builder: (context, state) {
-            return ProfilePage();
-          },
-        ),
-      ],
-    );
-  }
+        builder: (context, state) {
+          return ProfilePage();
+        },
+      ),
+    ],
+  );
 }
