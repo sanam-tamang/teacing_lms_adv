@@ -1,9 +1,11 @@
 part of 'profile_bloc.dart';
 
-@freezed
-class ProfileState with _$ProfileState {
-  const factory ProfileState.initial() = _Initial;
-  const factory ProfileState.loading() = _Loading;
-  const factory ProfileState.loaded(UserModel user) = _Loaded;
-  const factory ProfileState.failure(Failure failure) = _Failure;
-}
+// @freezed
+// class ProfileState with _$ProfileState {
+//   const factory ProfileState.initial() = _Initial;
+//   const factory ProfileState.loading() = _Loading;
+//   const factory ProfileState.loaded(UserModel user) = _Loaded;
+//   const factory ProfileState.failure(Failure failure) = _Failure;
+// }
+
+typedef ProfileState = BaseState<UserModel>;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:teaching_lms_adv/core/blocs/exports.dart';
 import 'package:teaching_lms_adv/core/widgets/error_msg.dart';
 import 'package:teaching_lms_adv/core/widgets/progress_indicator.dart';
 import 'package:teaching_lms_adv/features/profile/blocs/profile/profile_bloc.dart';

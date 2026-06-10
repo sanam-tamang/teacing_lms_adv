@@ -1,6 +1,7 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:teaching_lms_adv/core/error/failure.dart';
+import 'package:teaching_lms_adv/core/blocs/exports.dart';
+
 import 'package:teaching_lms_adv/features/auth/repositories/auth_repository.dart';
 
 part 'login_event.dart';

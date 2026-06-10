@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'profile_bloc.dart';
+part of 'apply_for_trainer_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,7 +12,7 @@ part of 'profile_bloc.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$ProfileEvent {
+mixin _$ApplyForTrainerEvent {
 
 
 
@@ -20,7 +20,7 @@ mixin _$ProfileEvent {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProfileEvent);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApplyForTrainerEvent);
 }
 
 
@@ -29,20 +29,20 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ProfileEvent()';
+  return 'ApplyForTrainerEvent()';
 }
 
 
 }
 
 /// @nodoc
-class $ProfileEventCopyWith<$Res>  {
-$ProfileEventCopyWith(ProfileEvent _, $Res Function(ProfileEvent) __);
+class $ApplyForTrainerEventCopyWith<$Res>  {
+$ApplyForTrainerEventCopyWith(ApplyForTrainerEvent _, $Res Function(ApplyForTrainerEvent) __);
 }
 
 
-/// Adds pattern-matching-related methods to [ProfileEvent].
-extension ProfileEventPatterns on ProfileEvent {
+/// Adds pattern-matching-related methods to [ApplyForTrainerEvent].
+extension ApplyForTrainerEventPatterns on ApplyForTrainerEvent {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -55,11 +55,11 @@ extension ProfileEventPatterns on ProfileEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Get value)?  get,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Started value)?  started,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _Get() when get != null:
-return get(_that);case _:
+case _Started() when started != null:
+return started(_that);case _:
   return orElse();
 
 }
@@ -77,11 +77,11 @@ return get(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Get value)  get,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Started value)  started,}){
 final _that = this;
 switch (_that) {
-case _Get():
-return get(_that);case _:
+case _Started():
+return started(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -98,11 +98,11 @@ return get(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Get value)?  get,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Started value)?  started,}){
 final _that = this;
 switch (_that) {
-case _Get() when get != null:
-return get(_that);case _:
+case _Started() when started != null:
+return started(_that);case _:
   return null;
 
 }
@@ -119,10 +119,10 @@ return get(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  get,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  started,required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _Get() when get != null:
-return get();case _:
+case _Started() when started != null:
+return started();case _:
   return orElse();
 
 }
@@ -140,10 +140,10 @@ return get();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  get,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  started,}) {final _that = this;
 switch (_that) {
-case _Get():
-return get();case _:
+case _Started():
+return started();case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -160,10 +160,10 @@ return get();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  get,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  started,}) {final _that = this;
 switch (_that) {
-case _Get() when get != null:
-return get();case _:
+case _Started() when started != null:
+return started();case _:
   return null;
 
 }
@@ -174,8 +174,8 @@ return get();case _:
 /// @nodoc
 
 
-class _Get implements ProfileEvent {
-  const _Get();
+class _Started implements ApplyForTrainerEvent {
+  const _Started();
   
 
 
@@ -185,7 +185,7 @@ class _Get implements ProfileEvent {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Get);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Started);
 }
 
 
@@ -194,7 +194,7 @@ int get hashCode => runtimeType.hashCode;
 
 @override
 String toString() {
-  return 'ProfileEvent.get()';
+  return 'ApplyForTrainerEvent.started()';
 }
 
 
