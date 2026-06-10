@@ -6,7 +6,7 @@ class AppLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Center(  
       child: LoadingAnimationWidget.bouncingBall(color: Colors.red, size: 200),
     );
   }

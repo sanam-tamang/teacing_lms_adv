@@ -7,6 +7,10 @@ class ShowErrorMessage extends StatelessWidget {
   final Failure failure;
   @override
   Widget build(BuildContext context) {
+
+    // if (failure is InternetFailure){
+    //   return AppText("");
+    // }
     return AppText(failure.message);
   }
 }

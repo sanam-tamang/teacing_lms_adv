@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:teaching_lms_adv/core/widgets/app_text.dart';
 import 'package:teaching_lms_adv/core/widgets/error_msg.dart';
 import 'package:teaching_lms_adv/core/widgets/progress_indicator.dart';
 import 'package:teaching_lms_adv/features/profile/blocs/profile/profile_bloc.dart';
+import 'package:teaching_lms_adv/features/profile/widgets/profile_loaded_data.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -26,7 +26,7 @@ class _ProfilePageState extends State<ProfilePage> {
         builder: (context, state) {
           return state.maybeWhen(
             orElse: () => AppLoading(),
-            loaded: (user) => AppText(user.name),
+            loaded: (user) => ShowUserData(user: user),
             failure: (f) => ShowErrorMessage(failure: f),
           );
         },
