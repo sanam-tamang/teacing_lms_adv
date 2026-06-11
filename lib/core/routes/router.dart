@@ -4,6 +4,7 @@ import 'package:teaching_lms_adv/core/routes/route_name.dart';
 import 'package:teaching_lms_adv/features/auth/pages/login_page.dart';
 import 'package:teaching_lms_adv/features/home/pages/home_page.dart';
 import 'package:teaching_lms_adv/features/profile/pages/profile_page.dart';
+import 'package:teaching_lms_adv/features/trainer/pages/apply_for_trainer.dart';
 
 class AppRoute {
   static final GoRouter router = GoRouter(
@@ -43,6 +44,15 @@ class AppRoute {
 
         builder: (context, state) {
           return ProfilePage();
+        },
+      ),
+
+      GoRoute(
+        path: RouteName.applyForTrainer.path,
+        name: RouteName.applyForTrainer,
+
+        builder: (context, state) {
+          return ApplyForTrainerPage();
         },
       ),
     ],

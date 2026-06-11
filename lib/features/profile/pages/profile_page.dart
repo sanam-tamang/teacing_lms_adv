@@ -16,7 +16,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    context.read<ProfileBloc>().add(ProfileEvent.get());
+    // context.read<ProfileBloc>().add(ProfileEvent.get());
   }
 
   @override

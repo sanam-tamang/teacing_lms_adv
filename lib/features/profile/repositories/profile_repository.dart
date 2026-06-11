@@ -21,3 +21,27 @@ class ProfileRepositoryImpl implements ProfileRepository {
     );
   }
 }
+
+//In memery cache just store in RAM short live
+
+// class ProfileRepositoryImpl implements ProfileRepository {
+//   final ApiService _apiService;
+
+//   UserModel? _cachedUserModel;
+
+//   ProfileRepositoryImpl({required ApiService apiService})
+//     : _apiService = apiService;
+//   @override
+//   FutureEither<UserModel> getUser() async {
+//     if (_cachedUserModel != null) {
+//       return Right(_cachedUserModel!);
+//     }
+//     return await _apiService.get(
+//       'profile/me',
+//       fromJson: (map) {
+//         _cachedUserModel = UserModel.fromMap(map);
+//         return _cachedUserModel!;
+//       },
+//     );
+//   }
+// }
