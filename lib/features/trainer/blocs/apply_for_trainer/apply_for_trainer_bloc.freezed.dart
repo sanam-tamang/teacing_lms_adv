@@ -14,30 +14,61 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ApplyForTrainerEvent {
 
-
+ TrainerInfo get info;
+/// Create a copy of ApplyForTrainerEvent
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ApplyForTrainerEventCopyWith<ApplyForTrainerEvent> get copyWith => _$ApplyForTrainerEventCopyWithImpl<ApplyForTrainerEvent>(this as ApplyForTrainerEvent, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApplyForTrainerEvent);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApplyForTrainerEvent&&(identical(other.info, info) || other.info == info));
 }
 
 
 @override
-int get hashCode => runtimeType.hashCode;
+int get hashCode => Object.hash(runtimeType,info);
 
 @override
 String toString() {
-  return 'ApplyForTrainerEvent()';
+  return 'ApplyForTrainerEvent(info: $info)';
 }
 
 
 }
 
 /// @nodoc
-class $ApplyForTrainerEventCopyWith<$Res>  {
-$ApplyForTrainerEventCopyWith(ApplyForTrainerEvent _, $Res Function(ApplyForTrainerEvent) __);
+abstract mixin class $ApplyForTrainerEventCopyWith<$Res>  {
+  factory $ApplyForTrainerEventCopyWith(ApplyForTrainerEvent value, $Res Function(ApplyForTrainerEvent) _then) = _$ApplyForTrainerEventCopyWithImpl;
+@useResult
+$Res call({
+ TrainerInfo info
+});
+
+
+
+
+}
+/// @nodoc
+class _$ApplyForTrainerEventCopyWithImpl<$Res>
+    implements $ApplyForTrainerEventCopyWith<$Res> {
+  _$ApplyForTrainerEventCopyWithImpl(this._self, this._then);
+
+  final ApplyForTrainerEvent _self;
+  final $Res Function(ApplyForTrainerEvent) _then;
+
+/// Create a copy of ApplyForTrainerEvent
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? info = null,}) {
+  return _then(_self.copyWith(
+info: null == info ? _self.info : info // ignore: cast_nullable_to_non_nullable
+as TrainerInfo,
+  ));
+}
+
 }
 
 
@@ -55,11 +86,11 @@ extension ApplyForTrainerEventPatterns on ApplyForTrainerEvent {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Started value)?  started,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Apply value)?  apply,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _Started() when started != null:
-return started(_that);case _:
+case _Apply() when apply != null:
+return apply(_that);case _:
   return orElse();
 
 }
@@ -77,11 +108,11 @@ return started(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Started value)  started,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Apply value)  apply,}){
 final _that = this;
 switch (_that) {
-case _Started():
-return started(_that);case _:
+case _Apply():
+return apply(_that);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -98,11 +129,11 @@ return started(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Started value)?  started,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Apply value)?  apply,}){
 final _that = this;
 switch (_that) {
-case _Started() when started != null:
-return started(_that);case _:
+case _Apply() when apply != null:
+return apply(_that);case _:
   return null;
 
 }
@@ -119,10 +150,10 @@ return started(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  started,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function( TrainerInfo info)?  apply,required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _Started() when started != null:
-return started();case _:
+case _Apply() when apply != null:
+return apply(_that.info);case _:
   return orElse();
 
 }
@@ -140,10 +171,10 @@ return started();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  started,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function( TrainerInfo info)  apply,}) {final _that = this;
 switch (_that) {
-case _Started():
-return started();case _:
+case _Apply():
+return apply(_that.info);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -160,10 +191,10 @@ return started();case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  started,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function( TrainerInfo info)?  apply,}) {final _that = this;
 switch (_that) {
-case _Started() when started != null:
-return started();case _:
+case _Apply() when apply != null:
+return apply(_that.info);case _:
   return null;
 
 }
@@ -174,33 +205,67 @@ return started();case _:
 /// @nodoc
 
 
-class _Started implements ApplyForTrainerEvent {
-  const _Started();
+class _Apply implements ApplyForTrainerEvent {
+  const _Apply(this.info);
   
 
+@override final  TrainerInfo info;
 
-
+/// Create a copy of ApplyForTrainerEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ApplyCopyWith<_Apply> get copyWith => __$ApplyCopyWithImpl<_Apply>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Started);
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Apply&&(identical(other.info, info) || other.info == info));
 }
 
 
 @override
-int get hashCode => runtimeType.hashCode;
+int get hashCode => Object.hash(runtimeType,info);
 
 @override
 String toString() {
-  return 'ApplyForTrainerEvent.started()';
+  return 'ApplyForTrainerEvent.apply(info: $info)';
 }
 
 
 }
 
+/// @nodoc
+abstract mixin class _$ApplyCopyWith<$Res> implements $ApplyForTrainerEventCopyWith<$Res> {
+  factory _$ApplyCopyWith(_Apply value, $Res Function(_Apply) _then) = __$ApplyCopyWithImpl;
+@override @useResult
+$Res call({
+ TrainerInfo info
+});
 
 
+
+
+}
+/// @nodoc
+class __$ApplyCopyWithImpl<$Res>
+    implements _$ApplyCopyWith<$Res> {
+  __$ApplyCopyWithImpl(this._self, this._then);
+
+  final _Apply _self;
+  final $Res Function(_Apply) _then;
+
+/// Create a copy of ApplyForTrainerEvent
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? info = null,}) {
+  return _then(_Apply(
+null == info ? _self.info : info // ignore: cast_nullable_to_non_nullable
+as TrainerInfo,
+  ));
+}
+
+
+}
 
 // dart format on

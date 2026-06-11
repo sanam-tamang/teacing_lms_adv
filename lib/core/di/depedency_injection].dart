@@ -10,15 +10,18 @@ import 'package:teaching_lms_adv/features/auth/blocs/login/login_bloc.dart';
 import 'package:teaching_lms_adv/features/auth/repositories/auth_repository.dart';
 import 'package:teaching_lms_adv/features/profile/blocs/profile/profile_bloc.dart';
 import 'package:teaching_lms_adv/features/profile/repositories/profile_repository.dart';
+import 'package:teaching_lms_adv/features/trainer/blocs/apply_for_trainer/apply_for_trainer_bloc.dart';
+import 'package:teaching_lms_adv/features/trainer/repositories/trainer_repository.dart';
 
 final sl = GetIt.instance;
 
 void init() {
   //bloc
 
-  sl.registerLazySingleton(() => LoginBloc(authRepository: sl()));
+  sl.registerLazySingleton(() => LoginBloc(repo: sl()));
   sl.registerLazySingleton(() => GateKeeperCubit(sl()));
   sl.registerLazySingleton(() => ProfileBloc(sl()));
+  sl.registerLazySingleton(() => ApplyForTrainerBloc(repo: sl()));
 
   //repo
   sl.registerLazySingleton<AuthRepository>(
@@ -27,6 +30,10 @@ void init() {
 
   sl.registerLazySingleton<ProfileRepository>(
     () => ProfileRepositoryImpl(apiService: sl()),
+  );
+
+    sl.registerLazySingleton<TrainerRepository>(
+    () => TrainerRepositoryI(apiService: sl()),
   );
 
   //core

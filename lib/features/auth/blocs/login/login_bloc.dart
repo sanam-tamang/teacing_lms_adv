@@ -8,16 +8,18 @@ part 'login_event.dart';
 part 'login_state.dart';
 part 'login_bloc.freezed.dart';
 
+
+
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  final AuthRepository authRepository;
-  LoginBloc({required this.authRepository}) : super(LoginState.initial()) {
+  final AuthRepository _repo;
+  LoginBloc({required AuthRepository repo}) : _repo = repo,  super(LoginState.initial()) {
     on<_Login>(_onLoginEvent);
   }
 
   Future<void> _onLoginEvent(_Login event, Emitter<LoginState> emit) async {
     emit(LoginState.loading());
 
-    final result = await authRepository.login(
+    final result = await _repo.login(
       email: event.email,
       password: event.password,
     );
